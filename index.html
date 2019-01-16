@@ -306,7 +306,7 @@
 <p>文件：CDH-*-el7.parcel，CDH-*-el7.sha1</p>
 <h3 id="下载cm包"><a href="#下载cm包" class="headerlink" title="下载cm包"></a>下载cm包</h3><p>网址：<a href="https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/RPMS/x86_64/" target="_blank" rel="noopener">https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/RPMS/x86_64/</a></p>
 <p>文件：cloudera-manager-agent-6.1.0-769885.el7.x86_64.rpm，cloudera-manager-daemons-6.1.0-769885.el7.x86_64.rpm，cloudera-manager-server-6.1.0-769885.el7.x86_64.rpm</p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="关闭防火墙、SELinux"><a href="#关闭防火墙、SELinux" class="headerlink" title="关闭防火墙、SELinux"></a>关闭防火墙、SELinux</h4><p><code>修改/etc/selinux/config文件, 将</code>SELINUX=enforcing<code>改为</code>SELINUX=disabled<code>,重启机器</code></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="关闭防火墙、SELinux"><a href="#关闭防火墙、SELinux" class="headerlink" title="关闭防火墙、SELinux"></a>关闭防火墙、SELinux</h4><p><code>修改/etc/selinux/config文件, 将&#39;SELINUX=enforcing&#39;改为&#39;SELINUX=disabled&#39;,重启机器</code></p>
 <h4 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h4><p><code>timedatectl set-timezone Asia/Shanghai</code></p>
 <h4 id="设置交换内存"><a href="#设置交换内存" class="headerlink" title="设置交换内存"></a>设置交换内存</h4><p><code>/etc/sysctl.conf， 添加vm.swappiness=1</code></p>
 <h4 id="关闭透明页面压缩"><a href="#关闭透明页面压缩" class="headerlink" title="关闭透明页面压缩"></a>关闭透明页面压缩</h4><p><code>echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</code></p>
