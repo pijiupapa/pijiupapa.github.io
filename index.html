@@ -302,7 +302,7 @@
       
         
           
-            <h1 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h1><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><p><code>IF NOT EXISTS
+            <h1 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h1><h2 id="表"><a href="#表" class="headerlink" title="表"></a>表</h2><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><p><code>IF NOT EXISTS
  CREATE TABLE db.tableName(
 ​            id string)
 ​            ROW FORMAT SERDE 
@@ -321,7 +321,7 @@ set SERDEPROPERTIES (&#39;field.delim&#39;=&#39;,&#39;,&#39;serialization.null.f
 <h3 id="还原"><a href="#还原" class="headerlink" title="还原"></a>还原</h3><p><code>psql dbname &lt; infile</code></p>
 <h4 id="远程还原"><a href="#远程还原" class="headerlink" title="远程还原"></a>远程还原</h4><p><code>psql -h host dbname &lt; infile</code></p>
 <h4 id="还原压缩"><a href="#还原压缩" class="headerlink" title="还原压缩"></a>还原压缩</h4><p><code>gunzip -c filename.gz | psql dbname</code></p>
-<h2 id="表"><a href="#表" class="headerlink" title="表"></a>表</h2><h3 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h3><p><code>COPY (SELECT * FROM tablename) TO &#39;/tmp/filename.csv&#39; (FORMAT CSV, DELIMITER &#39;,&#39;, HEADER FALSE, QUOTE &#39;&quot;&#39;);</code></p>
+<h2 id="表-1"><a href="#表-1" class="headerlink" title="表"></a>表</h2><h3 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h3><p><code>COPY (SELECT * FROM tablename) TO &#39;/tmp/filename.csv&#39; (FORMAT CSV, DELIMITER &#39;,&#39;, HEADER FALSE, QUOTE &#39;&quot;&#39;);</code></p>
 <p><code>COPY tablename TO &#39;/tmp/filename.csv&#39;  WITH (FORMAT CSV, DELIMITER &#39;,&#39;, HEADER FALSE, QUOTE &#39;&quot;&#39;);</code></p>
 <h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><p><code>COPY tablename ( column_name , ...) FROM &#39;filename&#39; WITH (FORMAT csv, DELIMITER &#39;,&#39;, HEADER FALSE);</code></p>
 <h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><h2 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h2><p>PID，起始时间，运行时间，命令行</p>
