@@ -81,13 +81,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="下载parcel包网址：http://archive.cloudera.com/cdh5/parcels/latest/ 文件：CDH-*-el7.parcel，CDH-*-el7.sha1 下载cm包网址：https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/RPMS/x86_64/ 文件：cloudera-manager-agent-6.1.0-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在centos7中安装hadoop集群">
+<meta property="og:url" content="http://yoursite.com/2019/01/16/在centos7中安装hadoop集群/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="下载parcel包网址：http://archive.cloudera.com/cdh5/parcels/latest/ 文件：CDH-*-el7.parcel，CDH-*-el7.sha1 下载cm包网址：https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/RPMS/x86_64/ 文件：cloudera-manager-agent-6.1.0-">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-16T03:32:59.296Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="在centos7中安装hadoop集群">
+<meta name="twitter:description" content="下载parcel包网址：http://archive.cloudera.com/cdh5/parcels/latest/ 文件：CDH-*-el7.parcel，CDH-*-el7.sha1 下载cm包网址：https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/RPMS/x86_64/ 文件：cloudera-manager-agent-6.1.0-">
 
 
 
@@ -117,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/16/在centos7中安装hadoop集群/">
 
 
 
 
 
-  <title>Hexo</title>
+  <title>在centos7中安装hadoop集群 | Hexo</title>
   
 
 
@@ -142,8 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -216,9 +219,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -248,9 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/16/在centos7中安装hadoop集群/" itemprop="url">在centos7中安装hadoop集群</a></h1>
+          <h1 class="post-title" itemprop="name headline">在centos7中安装hadoop集群</h1>
         
 
         <div class="post-meta">
@@ -300,9 +301,7 @@
       
 
       
-        
-          
-            <h3 id="下载parcel包"><a href="#下载parcel包" class="headerlink" title="下载parcel包"></a>下载parcel包</h3><p>网址：<a href="http://archive.cloudera.com/cdh5/parcels/latest/" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/parcels/latest/</a></p>
+        <h3 id="下载parcel包"><a href="#下载parcel包" class="headerlink" title="下载parcel包"></a>下载parcel包</h3><p>网址：<a href="http://archive.cloudera.com/cdh5/parcels/latest/" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/parcels/latest/</a></p>
 <p>文件：CDH-*-el7.parcel，CDH-*-el7.sha1</p>
 <h3 id="下载cm包"><a href="#下载cm包" class="headerlink" title="下载cm包"></a>下载cm包</h3><p>网址：<a href="https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/RPMS/x86_64/" target="_blank" rel="noopener">https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/RPMS/x86_64/</a></p>
 <p>文件：cloudera-manager-agent-6.1.0-769885.el7.x86_64.rpm，cloudera-manager-daemons-6.1.0-769885.el7.x86_64.rpm，cloudera-manager-server-6.1.0-769885.el7.x86_64.rpm</p>
@@ -333,8 +332,6 @@
 <p>创建hive，hue，oozie数据库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER hive WITH password &apos;hive&apos;;</span><br><span class="line">CREATE USER hue WITH password &apos;hue&apos;;</span><br><span class="line">CREATE USER oozie WITH password &apos;oozie&apos;;</span><br><span class="line"></span><br><span class="line">CREATE DATABASE hive OWNER hive;</span><br><span class="line">CREATE DATABASE hue OWNER hue;</span><br><span class="line">CREATE DATABASE oozie OWNER oozie;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -351,131 +348,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/30/first-blog/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yyz">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/30/first-blog/" itemprop="url">first_blog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-30T10:32:10+08:00">
-                2018-11-30
-              </time>
+              <a href="/2018/11/30/first-blog/" rel="next" title="first_blog">
+                <i class="fa fa-chevron-left"></i> first_blog
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -485,138 +379,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/30/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yyz">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/30/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-30T10:29:17+08:00">
-                2018-11-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -624,6 +391,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -644,8 +415,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -687,6 +467,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载parcel包"><span class="nav-number">1.</span> <span class="nav-text">下载parcel包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载cm包"><span class="nav-number">2.</span> <span class="nav-text">下载cm包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭防火墙、SELinux"><span class="nav-number">3.1.</span> <span class="nav-text">关闭防火墙、SELinux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置时区"><span class="nav-number">3.2.</span> <span class="nav-text">设置时区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置交换内存"><span class="nav-number">3.3.</span> <span class="nav-text">设置交换内存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭透明页面压缩"><span class="nav-number">3.4.</span> <span class="nav-text">关闭透明页面压缩</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主机名"><span class="nav-number">3.5.</span> <span class="nav-text">主机名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名"><span class="nav-number">3.6.</span> <span class="nav-text">域名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NTP"><span class="nav-number">4.</span> <span class="nav-text">NTP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装ntp"><span class="nav-number">4.1.</span> <span class="nav-text">安装ntp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置ntp"><span class="nav-number">4.2.</span> <span class="nav-text">配置ntp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ntp常用命令"><span class="nav-number">4.3.</span> <span class="nav-text">ntp常用命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Cloudera-Manager"><span class="nav-number">5.</span> <span class="nav-text">安装Cloudera Manager</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置cloudera-manager-server"><span class="nav-number">5.1.</span> <span class="nav-text">配置cloudera manager server</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -814,6 +610,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
