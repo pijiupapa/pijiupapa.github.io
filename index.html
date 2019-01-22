@@ -269,6 +269,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/22/安装postgresql/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yyz">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/22/安装postgresql/" itemprop="url">安装postgresql</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-22T10:40:15+08:00">
+                2019-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><ul>
+<li>postgresql-9.6</li>
+<li>centos-6.5， centos-7</li>
+</ul>
+<h2 id="编辑-yum-repository-文件"><a href="#编辑-yum-repository-文件" class="headerlink" title="编辑 yum repository 文件"></a>编辑 yum repository 文件</h2><p>编辑/etc/yum.repos.d/CentOS-Base.repo文件， 里面的[base] 和 [updates]块。在每个快末尾添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exclude=postgresql*</span><br></pre></td></tr></table></figure>
+<h2 id="repository-安装"><a href="#repository-安装" class="headerlink" title="repository 安装"></a>repository 安装</h2><ul>
+<li><p>centos-6.5</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-6-x86_64/pgdg-centos96-9.6-3.noarch.rpm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>centos-7</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y  https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-redhat96-9.6-3.noarch.rpm</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="postgresql-server-安装"><a href="#postgresql-server-安装" class="headerlink" title="postgresql server 安装"></a>postgresql server 安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y postgresql96-server</span><br></pre></td></tr></table></figure>
+<h3 id="默认路径"><a href="#默认路径" class="headerlink" title="默认路径"></a>默认路径</h3><p>postresql的存储路径为 /var/lib/pgsql/9.6/data</p>
+<p>可以通过修改postgresql的PGDATA改变存储路径。比如以/mnt/data/pgsql为例，</p>
+<p>编辑/usr/lib/systemd/system/postgresql-9.6.service，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Environment=PGDATA=/mnt/data/pgsql # 修改PGDATA</span><br></pre></td></tr></table></figure>
+<p>新建和修改文件权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /mnt/data/pgsql</span><br><span class="line">chown -R postgres:postgres /mnt/data/pgsql</span><br></pre></td></tr></table></figure>
+<h3 id="postgresql初始化"><a href="#postgresql初始化" class="headerlink" title="postgresql初始化"></a>postgresql初始化</h3><ul>
+<li><p>centos-6</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service postgresql-9.6 initdb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>centos-7</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/pgsql-9.6/bin/postgresql96-setup initdb</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start postgresql-9.6</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/tips/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -384,6 +532,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/kafka-consumer-groups --bootstrap-server localhost:9092 --describe --group &lt;group name&gt;</span><br></pre></td></tr></table></figure>
 <p>重置offset</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/kafka-consumer-groups --bootstrap-server localhost:9092 --group &lt;group_id&gt; --topic &lt;topic_name&gt; --reset-offsets --to-earliest --execute</span><br></pre></td></tr></table></figure>
+<h2 id="Schema"><a href="#Schema" class="headerlink" title="Schema"></a>Schema</h2><h3 id="schema-urls"><a href="#schema-urls" class="headerlink" title="schema urls"></a>schema urls</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">compatibility.subjects.versions.verify		POST /compatibility/subjects/&#123;subject&#125;/versions/&#123;version&#125;</span><br><span class="line">schemas.ids.get-schema	                        GET /schemas/ids/&#123;id&#125;</span><br><span class="line">subjects.get-schema				POST /subjects/&#123;subject&#125;</span><br><span class="line">subjects.list					GET /subjects</span><br><span class="line">subjects.versions.get-schema			GET /subjects/&#123;subject&#125;/versions/&#123;version&#125;</span><br><span class="line">subjects.versions.get-schema.only		GET /subjects/&#123;subject&#125;/versions/&#123;version&#125;/schema</span><br><span class="line">subjects.versions.list				GET /subjects/&#123;subject&#125;/versions</span><br><span class="line">subjects.versions.register			POST /subjects/&#123;subject&#125;/versions</span><br></pre></td></tr></table></figure>
+<p>例子：所有注册的schema</p>
+<p><code>curl http://localhost:8081/subjects</code></p>
 
           
         
@@ -503,38 +654,38 @@
       
         
           
-            <h3 id="下载parcel包"><a href="#下载parcel包" class="headerlink" title="下载parcel包"></a>下载parcel包</h3><p>网址：<a href="http://archive.cloudera.com/cdh5/parcels/latest/" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/parcels/latest/</a></p>
+            <h2 id="下载parcel包"><a href="#下载parcel包" class="headerlink" title="下载parcel包"></a>下载parcel包</h2><p>网址：<a href="http://archive.cloudera.com/cdh5/parcels/latest/" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/parcels/latest/</a></p>
 <p>文件：CDH-*-el7.parcel，CDH-*-el7.sha1</p>
-<h3 id="下载cm包"><a href="#下载cm包" class="headerlink" title="下载cm包"></a>下载cm包</h3><p>网址：<a href="https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/RPMS/x86_64/" target="_blank" rel="noopener">https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/RPMS/x86_64/</a></p>
+<h2 id="下载cm包"><a href="#下载cm包" class="headerlink" title="下载cm包"></a>下载cm包</h2><p>网址：<a href="https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/RPMS/x86_64/" target="_blank" rel="noopener">https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/RPMS/x86_64/</a></p>
 <p>文件：cloudera-manager-agent-*.rpm，cloudera-manager-daemons-*.rpm，cloudera-manager-server-*.rpm</p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="关闭防火墙、SELinux"><a href="#关闭防火墙、SELinux" class="headerlink" title="关闭防火墙、SELinux"></a>关闭防火墙、SELinux</h4><p>修改/etc/selinux/config文件, 将’SELINUX=enforcing’改为’SELINUX=disabled’,重启机器</p>
-<h4 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h4><p><code>timedatectl set-timezone Asia/Shanghai</code></p>
-<h4 id="设置交换内存"><a href="#设置交换内存" class="headerlink" title="设置交换内存"></a>设置交换内存</h4><p>/etc/sysctl.conf， 添加vm.swappiness=1</p>
-<h4 id="关闭透明页面压缩"><a href="#关闭透明页面压缩" class="headerlink" title="关闭透明页面压缩"></a>关闭透明页面压缩</h4><p><code>echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</code></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="关闭防火墙、SELinux"><a href="#关闭防火墙、SELinux" class="headerlink" title="关闭防火墙、SELinux"></a>关闭防火墙、SELinux</h3><p>修改/etc/selinux/config文件, 将’SELINUX=enforcing’改为’SELINUX=disabled’,重启机器</p>
+<h3 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h3><p><code>timedatectl set-timezone Asia/Shanghai</code></p>
+<h3 id="设置交换内存"><a href="#设置交换内存" class="headerlink" title="设置交换内存"></a>设置交换内存</h3><p>/etc/sysctl.conf， 添加vm.swappiness=1</p>
+<h3 id="关闭透明页面压缩"><a href="#关闭透明页面压缩" class="headerlink" title="关闭透明页面压缩"></a>关闭透明页面压缩</h3><p><code>echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</code></p>
 <p><code>echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled</code></p>
-<h4 id="主机名"><a href="#主机名" class="headerlink" title="主机名"></a>主机名</h4><p>master 01-20,slave 21-99</p>
+<h3 id="主机名"><a href="#主机名" class="headerlink" title="主机名"></a>主机名</h3><p>master 01-20,slave 21-99</p>
 <p><code>hostnamectl set-hostname master01.hadoop.com</code></p>
-<h4 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h4><p>修改/etc/hosts文件，增加节点ip</p>
+<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><p>修改/etc/hosts文件，增加节点ip</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">192.168.2.1 master01.hadoop.com master01</span><br><span class="line">192.168.2.2 master02.hadoop.com master02</span><br><span class="line">192.168.2.21 slave21.hadoop.com slave21</span><br><span class="line">291.168.2.22 slave22.hadoop.com slave22</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h3 id="NTP"><a href="#NTP" class="headerlink" title="NTP"></a>NTP</h3><h4 id="安装ntp"><a href="#安装ntp" class="headerlink" title="安装ntp"></a>安装ntp</h4><p><code>yum install ntp</code></p>
+<h2 id="NTP"><a href="#NTP" class="headerlink" title="NTP"></a>NTP</h2><h3 id="安装ntp"><a href="#安装ntp" class="headerlink" title="安装ntp"></a>安装ntp</h3><p><code>yum install ntp</code></p>
 <p>开机启动<code>systemctl enable ntpd.service</code></p>
-<h4 id="配置ntp"><a href="#配置ntp" class="headerlink" title="配置ntp"></a>配置ntp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">更新本地时间ntpdate ntp1.aliyun.com</span><br><span class="line">修改/etc/ntp.conf</span><br><span class="line">注释所有server指向sed -i &apos;/centos.pool.ntp.org/&#123;s/^/# /&#125;&apos; /etc/ntp.conf</span><br><span class="line">ntp服务可指向服务器，也可只向自身</span><br><span class="line">server ntp1.aliyun.com iburst</span><br><span class="line">添加日志 logfile /var/log/ntp.log</span><br></pre></td></tr></table></figure>
+<h3 id="配置ntp"><a href="#配置ntp" class="headerlink" title="配置ntp"></a>配置ntp</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">更新本地时间ntpdate ntp1.aliyun.com</span><br><span class="line">修改/etc/ntp.conf</span><br><span class="line">注释所有server指向sed -i &apos;/centos.pool.ntp.org/&#123;s/^/# /&#125;&apos; /etc/ntp.conf</span><br><span class="line">ntp服务可指向服务器，也可只向自身</span><br><span class="line">server ntp1.aliyun.com iburst</span><br><span class="line">添加日志 logfile /var/log/ntp.log</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ntp服务器指向自身</span><br><span class="line">master节点：server 127.127.1.0 注意自身地址不是127.0.0.1</span><br><span class="line">slave节点： server master01.hadoop.com iburst</span><br></pre></td></tr></table></figure>
-<h4 id="ntp常用命令"><a href="#ntp常用命令" class="headerlink" title="ntp常用命令"></a>ntp常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ntpstat</span><br><span class="line">查看当前ntp同步情况。一般同步广域网的ntp服务，大约需要15分钟。 如果输出为unsynchronised，表示未同步。输出为synchronised，则表示已同步</span><br></pre></td></tr></table></figure>
+<h3 id="ntp常用命令"><a href="#ntp常用命令" class="headerlink" title="ntp常用命令"></a>ntp常用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ntpstat</span><br><span class="line">查看当前ntp同步情况。一般同步广域网的ntp服务，大约需要15分钟。 如果输出为unsynchronised，表示未同步。输出为synchronised，则表示已同步</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">watch ntpq -p</span><br><span class="line">查看当前ntp与上层ntp的连接状况</span><br><span class="line">remote：NTP服务器的IP或主机名，注意左边的服务。如果是*，代表目前正在使用的ntp服务器。如果是+，代表备用的ntp服务器</span><br><span class="line">refid：參考的上层ntp服务器的位址</span><br><span class="line">st：stratum阶层</span><br><span class="line">when：几秒钟前曾经做做过时间同步化更新的动作；</span><br><span class="line">poll：下一次更新在几秒钟后；</span><br><span class="line">reach：已經向NTP 服务器要求更新的次数</span><br><span class="line">delay：网络传输过程当中延迟的时间，单位为ms</span><br><span class="line">offset：时间偏差值，单位为ms</span><br><span class="line">jitter：Linux系统时间与BIOS硬件时间的差异，单位为ms。</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ntpdc</span><br><span class="line">*表示正在同步的服务器</span><br><span class="line">=表示还未同步的服务器</span><br></pre></td></tr></table></figure>
-<h3 id="安装Cloudera-Manager"><a href="#安装Cloudera-Manager" class="headerlink" title="安装Cloudera Manager"></a>安装Cloudera Manager</h3><p>使用本地文件在每个节点安装</p>
+<h2 id="安装Cloudera-Manager"><a href="#安装Cloudera-Manager" class="headerlink" title="安装Cloudera Manager"></a>安装Cloudera Manager</h2><p>使用本地文件在每个节点安装</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/cloudera-manager.repo -P /etc/yum.repos.d/</span><br><span class="line">yum -y update</span><br><span class="line">yum --nogpgcheck localinstall -y /localpath/cloudera-manager-agent-6.1.0-769885.el7.x86_64.rpm</span><br><span class="line">yum --nogpgcheck localinstall -y /localpath/cloudera-manager-daemons-6.1.0-769885.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
-<h4 id="配置cloudera-manager-server"><a href="#配置cloudera-manager-server" class="headerlink" title="配置cloudera manager server"></a>配置cloudera manager server</h4><p>安装postgresql</p>
+<h3 id="配置cloudera-manager-server"><a href="#配置cloudera-manager-server" class="headerlink" title="配置cloudera manager server"></a>配置cloudera manager server</h3><p>安装postgresql</p>
 <p>安装server：<code>yum --nogpgcheck localinstall -y /localpath/cloudera-manager-server-6.1.0-769885.el7.x86_64.rpm</code></p>
 <p>配置数据库：<code>/usr/share/cmf/schema/scm_prepare_database.sh -h master01.data.com postgresql scm scm scm</code></p>
 <p>启动server：<code>systemctl start cloudera-scm-server</code></p>
 <p>CDH parcel包安装</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv /localpath/CDH-\*-el7.parcel /opt/cloudera/parcel-repo/</span><br><span class="line">mv /localpath/CDH-\*-el7.sha1 /opt/cloudera/parcel-repo/CDH-\*-el7.sha</span><br></pre></td></tr></table></figure>
-<h4 id="登录Cloudera-Manager-Web"><a href="#登录Cloudera-Manager-Web" class="headerlink" title="登录Cloudera Manager Web"></a>登录Cloudera Manager Web</h4><p>在浏览器中输入http://&lt;server_host&gt;:7180</p>
+<h2 id="登录Cloudera-Manager-Web"><a href="#登录Cloudera-Manager-Web" class="headerlink" title="登录Cloudera Manager Web"></a>登录Cloudera Manager Web</h2><p>在浏览器中输入http://&lt;server_host&gt;:7180</p>
 <p><strong>Username:</strong> admin</p>
 <p><strong>Password:</strong> admin</p>
-<h4 id="创建hive，hue，oozie数据库"><a href="#创建hive，hue，oozie数据库" class="headerlink" title="创建hive，hue，oozie数据库"></a>创建hive，hue，oozie数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER hive WITH password &apos;hive&apos;;</span><br><span class="line">CREATE USER hue WITH password &apos;hue&apos;;</span><br><span class="line">CREATE USER oozie WITH password &apos;oozie&apos;;</span><br><span class="line"></span><br><span class="line">CREATE DATABASE hive OWNER hive;</span><br><span class="line">CREATE DATABASE hue OWNER hue;</span><br><span class="line">CREATE DATABASE oozie OWNER oozie;</span><br></pre></td></tr></table></figure>
+<h2 id="创建hive，hue，oozie数据库"><a href="#创建hive，hue，oozie数据库" class="headerlink" title="创建hive，hue，oozie数据库"></a>创建hive，hue，oozie数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER hive WITH password &apos;hive&apos;;</span><br><span class="line">CREATE USER hue WITH password &apos;hue&apos;;</span><br><span class="line">CREATE USER oozie WITH password &apos;oozie&apos;;</span><br><span class="line"></span><br><span class="line">CREATE DATABASE hive OWNER hive;</span><br><span class="line">CREATE DATABASE hue OWNER hue;</span><br><span class="line">CREATE DATABASE oozie OWNER oozie;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -744,7 +895,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

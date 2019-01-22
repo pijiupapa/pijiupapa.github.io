@@ -81,13 +81,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="安装环境 postgresql-9.6 centos-6.5， centos-7  编辑 yum repository 文件编辑/etc/yum.repos.d/CentOS-Base.repo文件， 里面的[base] 和 [updates]块。在每个快末尾添加 1exclude=postgresql* repository 安装 centos-6.5 1yum install -y https">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装postgresql">
+<meta property="og:url" content="http://yoursite.com/2019/01/22/安装postgresql/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="安装环境 postgresql-9.6 centos-6.5， centos-7  编辑 yum repository 文件编辑/etc/yum.repos.d/CentOS-Base.repo文件， 里面的[base] 和 [updates]块。在每个快末尾添加 1exclude=postgresql* repository 安装 centos-6.5 1yum install -y https">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-22T02:46:23.673Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="安装postgresql">
+<meta name="twitter:description" content="安装环境 postgresql-9.6 centos-6.5， centos-7  编辑 yum repository 文件编辑/etc/yum.repos.d/CentOS-Base.repo文件， 里面的[base] 和 [updates]块。在每个快末尾添加 1exclude=postgresql* repository 安装 centos-6.5 1yum install -y https">
 
 
 
@@ -117,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/22/安装postgresql/">
 
 
 
 
 
-  <title>Archive | Hexo</title>
+  <title>安装postgresql | Hexo</title>
   
 
 
@@ -142,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -254,72 +258,169 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        Um..! 4 posts in total. Keep on posting.
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/22/安装postgresql/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yyz">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/11/30/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">安装postgresql</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-30T10:29:17+08:00" content="2018-11-30">
-          11-30
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-22T10:40:15+08:00">
+                2019-01-22
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><ul>
+<li>postgresql-9.6</li>
+<li>centos-6.5， centos-7</li>
+</ul>
+<h2 id="编辑-yum-repository-文件"><a href="#编辑-yum-repository-文件" class="headerlink" title="编辑 yum repository 文件"></a>编辑 yum repository 文件</h2><p>编辑/etc/yum.repos.d/CentOS-Base.repo文件， 里面的[base] 和 [updates]块。在每个快末尾添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exclude=postgresql*</span><br></pre></td></tr></table></figure>
+<h2 id="repository-安装"><a href="#repository-安装" class="headerlink" title="repository 安装"></a>repository 安装</h2><ul>
+<li><p>centos-6.5</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-6-x86_64/pgdg-centos96-9.6-3.noarch.rpm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>centos-7</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y  https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-redhat96-9.6-3.noarch.rpm</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="postgresql-server-安装"><a href="#postgresql-server-安装" class="headerlink" title="postgresql server 安装"></a>postgresql server 安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y postgresql96-server</span><br></pre></td></tr></table></figure>
+<h3 id="默认路径"><a href="#默认路径" class="headerlink" title="默认路径"></a>默认路径</h3><p>postresql的存储路径为 /var/lib/pgsql/9.6/data</p>
+<p>可以通过修改postgresql的PGDATA改变存储路径。比如以/mnt/data/pgsql为例，</p>
+<p>编辑/usr/lib/systemd/system/postgresql-9.6.service，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Environment=PGDATA=/mnt/data/pgsql # 修改PGDATA</span><br></pre></td></tr></table></figure>
+<p>新建和修改文件权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /mnt/data/pgsql</span><br><span class="line">chown -R postgres:postgres /mnt/data/pgsql</span><br></pre></td></tr></table></figure>
+<h3 id="postgresql初始化"><a href="#postgresql初始化" class="headerlink" title="postgresql初始化"></a>postgresql初始化</h3><ul>
+<li><p>centos-6</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service postgresql-9.6 initdb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>centos-7</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/pgsql-9.6/bin/postgresql96-setup initdb</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start postgresql-9.6</span><br></pre></td></tr></table></figure>
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/16/tips/" rel="next" title="tips">
+                <i class="fa fa-chevron-left"></i> tips
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -327,6 +428,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -347,8 +452,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -390,6 +504,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装环境"><span class="nav-number">1.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑-yum-repository-文件"><span class="nav-number">2.</span> <span class="nav-text">编辑 yum repository 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#repository-安装"><span class="nav-number">3.</span> <span class="nav-text">repository 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#postgresql-server-安装"><span class="nav-number">4.</span> <span class="nav-text">postgresql server 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认路径"><span class="nav-number">4.1.</span> <span class="nav-text">默认路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#postgresql初始化"><span class="nav-number">4.2.</span> <span class="nav-text">postgresql初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动服务"><span class="nav-number">5.</span> <span class="nav-text">启动服务</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -517,6 +647,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
